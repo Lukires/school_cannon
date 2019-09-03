@@ -1,4 +1,4 @@
-package com.lukire.Camera;
+package com.lukire.camera;
 
 import processing.core.PMatrix2D;
 

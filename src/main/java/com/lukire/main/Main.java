@@ -1,8 +1,7 @@
 package com.lukire.main;
 
-import com.lukire.Camera.Camera;
+import com.lukire.camera.Camera;
 import processing.core.PApplet;
-import processing.event.Event;
 import processing.event.KeyEvent;
 
 public class Main extends PApplet {

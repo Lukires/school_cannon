@@ -1,4 +1,4 @@
-package com.lukire.Map.Tile;
+package com.lukire.map.tile;
 
 public abstract class MapTile {
 

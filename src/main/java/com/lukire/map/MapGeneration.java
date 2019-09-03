@@ -1,4 +1,4 @@
-package com.lukire.Map;
+package com.lukire.map;
 
 public class MapGeneration {
 }
