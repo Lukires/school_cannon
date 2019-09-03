@@ -5,13 +5,23 @@ public abstract class MapTile {
 
 
 
-    TileType tile;
+    private float health = 100f;
+
+    private TileType tile;
     public MapTile(TileType tile) {
         this.tile=tile;
     }
 
     public TileType getTileType() {
         return tile;
+    }
+
+    public float getHealth() {
+        return health;
+    }
+
+    public void subtractHealth(float i) {
+        this.health-=i;
     }
 
 

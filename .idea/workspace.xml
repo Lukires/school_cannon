@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16134f63-62ad-49f5-9804-ea1e5ee2b075" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/TileType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/EventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/EventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/EventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/Listener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/events/ClickEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/events/Collidable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Event/events/CollisionEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/slushing/Liquid/Particle/Particle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/slushing/Liquid/Particle/WaterParticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/slushing/Liquid/Water.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../slushingprocessing/src/main/slushing/Slushing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,14 +29,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="285">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding>
                 <element signature="e#139#140#0" expanded="true" />
                 <element signature="e#188#189#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,16 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state>
+              <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
               <folding>
                 <element signature="e#121#122#0" expanded="true" />
                 <element signature="e#140#141#0" expanded="true" />
                 <element signature="e#184#185#0" expanded="true" />
                 <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#324#325#0" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/TileType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="60">
+              <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -92,8 +84,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="105">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#185#186#0" expanded="true" />
+                <element signature="e#212#213#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,14 +120,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/MapGeneration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/Dirt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/Tile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java" />
       </list>
     </option>
   </component>
@@ -296,6 +293,21 @@
       <option name="presentableId" value="Default" />
       <updated>1567070300273</updated>
     </task>
+    <task id="LOCAL-00001" summary="Groundwork for destructable maps">
+      <created>1567493392159</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567493392159</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Slushing Project foundation">
+      <created>1567493521203</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567493521203</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -311,7 +323,7 @@
     <frame x="-1" y="-1" width="1922" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25506938" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25506938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -320,12 +332,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297062" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3297062" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297062" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3297062" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3297062" />
@@ -339,30 +351,17 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Groundwork for destructable maps" />
+    <MESSAGE value="Slushing Project foundation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slushing Project foundation" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/schoolcannon.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#139#140#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/MapGeneration.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -378,29 +377,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/TileType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="60">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/MapTile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
           <folding>
             <element signature="e#121#122#0" expanded="true" />
             <element signature="e#140#141#0" expanded="true" />
             <element signature="e#184#185#0" expanded="true" />
             <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/Map/Tile/tiles/DirtTile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukire/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -21,7 +21,7 @@ public class Main extends PApplet {
 
     @Override
     public void draw() {
-
+        rect(0,0,4,4);
     }
 
 }
