@@ -1,8 +1,15 @@
 package com.lukire.main;
 
+import com.lukire.Camera.Camera;
 import processing.core.PApplet;
+import processing.event.Event;
+import processing.event.KeyEvent;
 
 public class Main extends PApplet {
+
+
+    Camera camera = Camera.getCamera();
+
 
     public static void main(String[] args) {
         Main.main("com.lukire.main.Main");
@@ -21,7 +28,34 @@ public class Main extends PApplet {
 
     @Override
     public void draw() {
-        rect(0,0,4,4);
+        clear();
+        setMatrix(camera);
+        rect(100,100,20,20);
+    }
+
+    public void keyPressed(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        //LEFT
+        if (key == 37) {
+            camera.changeX(-10);
+        }
+
+        //RIGHT
+        if (key == 39) {
+            camera.changeX(10);
+        }
+
+
+        if (key == 38) {
+            camera.changeScale(0.1f);
+        }
+
+        if (key == 40) {
+            camera.changeScale(-0.1f);
+        }
+
     }
 
 }
