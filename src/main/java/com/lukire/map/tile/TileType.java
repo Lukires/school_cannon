@@ -11,4 +11,7 @@ public enum TileType {
         this.strength=strength;
         this.rgb=rgb;
     }
+
+    public int getStrength() { return this.strength; }
+    public short[] getRGB() { return this.rgb; }
 }

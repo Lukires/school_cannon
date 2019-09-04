@@ -1,6 +1,6 @@
 package com.lukire.map.tile;
 
-public abstract class MapTile {
+public abstract class Tile {
 
 
 
@@ -8,7 +8,7 @@ public abstract class MapTile {
     private float health = 100f;
 
     private TileType tile;
-    public MapTile(TileType tile) {
+    public Tile(TileType tile) {
         this.tile=tile;
     }
 

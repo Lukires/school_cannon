@@ -3,6 +3,7 @@ package com.lukire.main;
 import com.lukire.camera.Camera;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
+import processing.event.MouseEvent;
 
 public class Main extends PApplet {
 
@@ -55,6 +56,10 @@ public class Main extends PApplet {
             camera.changeScale(-0.1f);
         }
 
+    }
+
+    public void mousePressed(MouseEvent e) {
+        
     }
 
 }
