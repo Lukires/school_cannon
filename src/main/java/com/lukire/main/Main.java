@@ -1,6 +1,9 @@
 package com.lukire.main;
 
 import com.lukire.camera.Camera;
+import com.lukire.event.EventHandler;
+import com.lukire.event.events.ClickEvent;
+import com.lukire.event.listeners.ClickListener;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
 import processing.event.MouseEvent;
@@ -18,12 +21,13 @@ public class Main extends PApplet {
 
     @Override
     public void settings() {
+
         size(1000,1000);
     }
 
     @Override
     public void setup() {
-
+        EventHandler.register(new ClickListener());
     }
 
     @Override
@@ -59,7 +63,8 @@ public class Main extends PApplet {
     }
 
     public void mousePressed(MouseEvent e) {
-        
+        print("clicked");
+        EventHandler.trigger(new ClickEvent(e));
     }
 
 }
