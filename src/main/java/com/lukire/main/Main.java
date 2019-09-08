@@ -4,6 +4,8 @@ import com.lukire.camera.Camera;
 import com.lukire.event.EventHandler;
 import com.lukire.event.events.ClickEvent;
 import com.lukire.event.listeners.ClickListener;
+import com.lukire.map.Map;
+import com.lukire.map.MapGeneration;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
 import processing.event.MouseEvent;
@@ -12,7 +14,7 @@ public class Main extends PApplet {
 
 
     Camera camera = Camera.getCamera();
-
+    Map map = MapGeneration.generateMap();
 
     public static void main(String[] args) {
         Main.main("com.lukire.main.Main");
@@ -34,11 +36,13 @@ public class Main extends PApplet {
     public void draw() {
         clear();
         setMatrix(camera);
-        rect(100,100,20,20);
+        //rect(100,100,20,20);
+        MapGeneration.generateMap().draw(this);
+        noLoop();
     }
 
     public void keyPressed(KeyEvent e) {
-
+        loop();
         int key = e.getKeyCode();
 
         //LEFT
@@ -53,11 +57,12 @@ public class Main extends PApplet {
 
 
         if (key == 38) {
-            camera.changeScale(0.1f);
+            //camera.changeScale(0.1f);
+            camera.changeY(-10);
         }
 
         if (key == 40) {
-            camera.changeScale(-0.1f);
+            camera.changeY(10);
         }
 
     }

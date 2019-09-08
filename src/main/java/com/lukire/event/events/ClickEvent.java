@@ -21,11 +21,11 @@ public class ClickEvent extends Event {
 
     //The coordinates are recalculated in accordance to the camera offset.
     public float getX() {
-        return (mouseEvent.getX()+camera.getxOffset())*camera.getScale();
+        return (mouseEvent.getX()-camera.getxOffset())/camera.getScale();
     }
 
     public float getY() {
-        return (mouseEvent.getY()+camera.getyOffset())*camera.getScale();
+        return (mouseEvent.getY()+camera.getyOffset())/camera.getScale();
     }
 
 }
