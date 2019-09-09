@@ -4,6 +4,7 @@ Obligatory Processing 3.0 school project.
 
 Interesting stuff:
 src/main/java/com/lukire/event/EventHandler.java
+and
 src/main/java/com/lukire/map/Map.java
 
 
