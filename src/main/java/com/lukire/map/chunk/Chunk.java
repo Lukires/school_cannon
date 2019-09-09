@@ -6,8 +6,6 @@ import processing.core.PApplet;
 public class Chunk {
 
 
-    private boolean updated = false;
-
     private static final int size = 16;
     public static int getSize() { return size; }
 
@@ -33,15 +31,12 @@ public class Chunk {
     }
 
     public int getTileX(int x) {
-        return (x%Tile.getSize())%Chunk.getSize();
+        return (x/(int)Tile.getSize())/(int)Chunk.getSize();
     }
 
     public int getTileY(int y) {
-        return (y%Tile.getSize())%Chunk.getSize();
+        return (y/(int)Tile.getSize())/(int)Chunk.getSize();
     }
-
-    public boolean isUpdated() { return updated; }
-    public void setUpdated(boolean updated) { this.updated=updated; }
 
     //xc and xy are CHUNK COORDINATES
     public void draw(PApplet screen, int xc, int xy) {

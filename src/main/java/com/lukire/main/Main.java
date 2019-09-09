@@ -1,9 +1,15 @@
 package com.lukire.main;
 
 import com.lukire.camera.Camera;
+import com.lukire.entity.Entity;
+import com.lukire.entity.Placement;
+import com.lukire.entity.entities.Cannon;
 import com.lukire.event.EventHandler;
 import com.lukire.event.events.ClickEvent;
-import com.lukire.event.listeners.ClickListener;
+import com.lukire.event.events.KeyPressEvent;
+import com.lukire.event.events.MouseMoveEvent;
+import com.lukire.event.events.NewFrameEvent;
+import com.lukire.event.listeners.*;
 import com.lukire.map.Map;
 import com.lukire.map.MapGeneration;
 import processing.core.PApplet;
@@ -14,7 +20,11 @@ public class Main extends PApplet {
 
 
     Camera camera = Camera.getCamera();
+    int cameraX;
+    int cameraY;
+
     Map map = MapGeneration.generateMap();
+    public static boolean update = true;
 
     public static void main(String[] args) {
         Main.main("com.lukire.main.Main");
@@ -29,47 +39,51 @@ public class Main extends PApplet {
 
     @Override
     public void setup() {
+        frameRate(30);
+
         EventHandler.register(new ClickListener());
+        EventHandler.register(new KeyListener());
+        EventHandler.register(new FrameListener());
+        EventHandler.register(new EntityBlockCollisionListener());
+        EventHandler.register(new MouseMoveListener());
+
+        Entity.spawn(new Cannon(), new Placement(map, 100,100));
     }
 
     @Override
     public void draw() {
-        clear();
-        setMatrix(camera);
-        //rect(100,100,20,20);
-        MapGeneration.generateMap().draw(this);
-        noLoop();
+
+
+
+        EventHandler.trigger(new NewFrameEvent(this));
+        if (camera.getxOffset() != cameraX || camera.getyOffset() != cameraY) {
+            update=true;
+        }
+
+        if (update) {
+            clear();
+            setMatrix(camera);
+            map.draw(this);
+
+            update=!update;
+        }
+
+        for (Entity entity : Entity.getEntities()) {
+            entity.draw(this);
+        }
+
     }
 
     public void keyPressed(KeyEvent e) {
-        loop();
-        int key = e.getKeyCode();
-
-        //LEFT
-        if (key == 37) {
-            camera.changeX(-10);
-        }
-
-        //RIGHT
-        if (key == 39) {
-            camera.changeX(10);
-        }
-
-
-        if (key == 38) {
-            //camera.changeScale(0.1f);
-            camera.changeY(-10);
-        }
-
-        if (key == 40) {
-            camera.changeY(10);
-        }
+        EventHandler.trigger(new KeyPressEvent(e));
 
     }
 
     public void mousePressed(MouseEvent e) {
-        print("clicked");
-        EventHandler.trigger(new ClickEvent(e));
+        EventHandler.trigger(new ClickEvent(e, this));
     }
 
+    public void mouseMoved(MouseEvent e) {
+        EventHandler.trigger(new MouseMoveEvent(e, this));
+    }
 }

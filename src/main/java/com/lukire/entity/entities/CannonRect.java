@@ -1,14 +1,14 @@
 package com.lukire.entity.entities;
 
+import com.lukire.entity.Entity;
 import processing.core.PApplet;
 
-public class CannonBallProjectile extends Projectile {
+public class CannonRect extends Entity {
     public void draw(PApplet screen) {
 
-        screen.fill(0, 255, 0);
     }
 
     public int getSize() {
-        return 16;
+        return 12;
     }
 }

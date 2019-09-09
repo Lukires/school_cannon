@@ -27,6 +27,9 @@ public class Map {
 
     //Gets the chunk based on CHUNK COORDINATES
     public Chunk getChunk(int x, int y) {
+        if (chunks.get(x) == null) {
+            return null;
+        }
         return chunks.get(x).get(y);
     }
 
@@ -42,11 +45,11 @@ public class Map {
 
     //Converts game coordinate to chunk coordinate
     public static int getChunkX(int x) {
-        return x%(16*Chunk.getSize());
+        return (int)(x/(16*Tile.getSize()));
     }
 
     public static int getChunkY(int y) {
-        return y%(16*Chunk.getSize());
+        return (int)(y/(16*Tile.getSize()));
     }
 
 
@@ -59,6 +62,14 @@ public class Map {
     The KeySet could start at ANY number. Which is why we use iterators to loop through it instead.
 
      */
+
+    public void updateChunk(PApplet screen, int x, int y) {
+        Chunk chunk = getChunkFromGameLocation(x, y);
+
+        if (chunk != null) {
+            chunk.draw(screen, getChunkX(x), getChunkY(y));
+        }
+    }
 
     public void draw(PApplet screen) {
 

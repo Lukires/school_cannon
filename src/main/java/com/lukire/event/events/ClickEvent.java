@@ -2,6 +2,7 @@ package com.lukire.event.events;
 
 import com.lukire.camera.Camera;
 import com.lukire.event.Event;
+import processing.core.PApplet;
 import processing.event.MouseEvent;
 
 
@@ -12,9 +13,11 @@ public class ClickEvent extends Event {
 
     private MouseEvent mouseEvent;
     private static Camera camera = Camera.getCamera();
+    PApplet screen;
 
-    public ClickEvent(MouseEvent mouseEvent) {
+    public ClickEvent(MouseEvent mouseEvent, PApplet screen) {
         this.mouseEvent=mouseEvent;
+        this.screen=screen;
     }
 
     public MouseEvent getMouseEvent() { return mouseEvent; }
@@ -26,6 +29,10 @@ public class ClickEvent extends Event {
 
     public float getY() {
         return (mouseEvent.getY()+camera.getyOffset())/camera.getScale();
+    }
+
+    public PApplet getScreen() {
+        return this.screen;
     }
 
 }

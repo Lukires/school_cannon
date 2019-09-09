@@ -1,5 +1,6 @@
 package com.lukire.entity;
 
+import com.lukire.map.Map;
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -10,37 +11,45 @@ public abstract class Entity {
 
     private static ArrayList<Entity> entities = new ArrayList<Entity>();
 
-    protected float x;
-    protected float y;
-    protected  PVector vector;
 
-    public Entity() {
+    Placement placement;
 
+    public Placement getPlacement() {
+        return this.placement;
     }
 
-    public float getX() { return this.x; }
-    public float getY() { return this.y; }
-    public PVector getVector() { return this.vector; }
-
-    public void setX(float x) {
-        this.x=x;
+    public void setPlacement(Placement placement) {
+        this.placement=placement;
     }
-
-    public void setY(float y) {
-        this.y=y;
-    }
-
-    public void setVector(PVector vector) {
-        this.vector=vector;
-    }
-
     public static ArrayList<Entity> getEntities() { return entities; }
+
+    public float getX() {
+        return placement.getX();
+    }
+
+    public float getY() {
+        return placement.getY();
+    }
+
+    public void setX(float x) { placement.x=x; }
+
+    public void setY(float y) { placement.y=y; }
 
     public abstract void draw(PApplet screen);
 
-    public static void spawn(Entity e, float x, float y) {
-        e.setX(x);
-        e.setY(y);
+    public abstract int getSize();
+
+
+    public static void spawn(Entity e, Placement placement) {
+        e.setPlacement(placement);
         entities.add(e);
+    }
+
+    public boolean collidesBlock() {
+        Map map = placement.getMap();
+        int x = (int)placement.getX();
+        int y = (int)placement.getY();
+        return map.getChunkFromGameLocation(x, y).getTileFromGameCoordinate(x,y) != null
+                && map.getChunkFromGameLocation(x+getSize(), y+getSize()).getTileFromGameCoordinate(x+getSize(),y+getSize()) != null;
     }
 }
