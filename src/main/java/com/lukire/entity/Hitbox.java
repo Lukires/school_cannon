@@ -8,14 +8,14 @@ public class Hitbox {
 
     //Designed for SQUARES
     public Hitbox(EntityShape entityShape, int a, int b) {
-        this.entityShape=entityShape;
-        this.a=a;
-        this.b=b;
+        this.entityShape = entityShape;
+        this.a = a;
+        this.b = b;
     }
 
 
     //offsetX is the x coordinate minus the entity's x coordinate
-    //offsetY is the y coordinate minus the entity's y coordinate
+    //offsetY is the y coordinate minus the entity's y coordinate!
     public boolean isWithin(float offsetX, float offsetY) {
 
         switch(this.entityShape) {
