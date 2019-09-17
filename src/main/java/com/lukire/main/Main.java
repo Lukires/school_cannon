@@ -22,10 +22,9 @@ public class Main extends PApplet {
     Camera camera = Camera.getCamera();
     int cameraX;
     int cameraY;
-
     Map map = MapGeneration.generateMap();
     public static boolean update = true;
-
+    public NewFrameEvent newFrameEvent;
     public static void main(String[] args) {
         Main.main("com.lukire.main.Main");
     }
@@ -43,19 +42,20 @@ public class Main extends PApplet {
 
         EventHandler.register(new ClickListener());
         EventHandler.register(new KeyListener());
-        EventHandler.register(new FrameListener());
+        EventHandler.register(new PhysicsListener());
         EventHandler.register(new EntityBlockCollisionListener());
         EventHandler.register(new MouseMoveListener());
 
         Entity.spawn(new Cannon(), new Placement(map, 100,100));
+
+        newFrameEvent = new NewFrameEvent(this, frameCount, (int) frameRate);
     }
 
     @Override
     public void draw() {
 
-
-
-        EventHandler.trigger(new NewFrameEvent(this));
+        //map.draw(this);
+        EventHandler.trigger(newFrameEvent);
         if (camera.getxOffset() != cameraX || camera.getyOffset() != cameraY) {
             update=true;
         }

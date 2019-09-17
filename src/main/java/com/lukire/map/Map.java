@@ -52,6 +52,10 @@ public class Map {
         return (int)(y/(16*Tile.getSize()));
     }
 
+    public Tile getTile(int x, int y) {
+        return getChunkFromGameLocation(x,y).getTileFromGameCoordinate(x,y);
+    }
+
 
     /*
 

@@ -8,7 +8,10 @@ public abstract class Tile {
     private float health = 100f;
 
     private TileType tile;
-    public Tile(TileType tile) {
+    private int x, y;
+    public Tile(TileType tile/*, int x, int y*/) {
+        /*this.x=x;
+        this.y=y;*/
         this.tile=tile;
     }
 

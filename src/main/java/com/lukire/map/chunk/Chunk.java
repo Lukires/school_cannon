@@ -5,6 +5,9 @@ import processing.core.PApplet;
 
 public class Chunk {
 
+    public Chunk() {
+    }
+
 
     private static final int size = 16;
     public static int getSize() { return size; }

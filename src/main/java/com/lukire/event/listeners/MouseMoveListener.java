@@ -14,7 +14,7 @@ public class MouseMoveListener implements Listener {
 
         PApplet screen = e.getScreen();
 
-        for (Entity entity : Entity.getEntities()) {
+        /*for (Entity entity : Entity.getEntities()) {
             if (!(entity instanceof Cannon)) {
                 return;
             }
@@ -25,6 +25,6 @@ public class MouseMoveListener implements Listener {
             screen.rect(0, 0, entity.getSize(), entity.getSize()/2);
             screen.popMatrix();
 
-        }
+        }*/
     }
 }

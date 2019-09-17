@@ -37,19 +37,18 @@ public abstract class Entity {
 
     public abstract void draw(PApplet screen);
 
-    public abstract int getSize();
-
-
     public static void spawn(Entity e, Placement placement) {
         e.setPlacement(placement);
         entities.add(e);
     }
 
     public boolean collidesBlock() {
-        Map map = placement.getMap();
+       /* Map map = placement.getMap();
         int x = (int)placement.getX();
         int y = (int)placement.getY();
         return map.getChunkFromGameLocation(x, y).getTileFromGameCoordinate(x,y) != null
-                && map.getChunkFromGameLocation(x+getSize(), y+getSize()).getTileFromGameCoordinate(x+getSize(),y+getSize()) != null;
+                && map.getChunkFromGameLocation(x+getSize(), y+getSize()).getTileFromGameCoordinate(x+getSize(),y+getSize()) != null;*/
+
+       return false;
     }
 }
