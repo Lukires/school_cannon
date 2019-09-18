@@ -21,12 +21,12 @@ public class MapGeneration {
                 for (int xt = 0; xt < 16; xt++) {
                     for (int yt = 0; yt < 16; yt++) {
                         if (y < 4) {
-                            chunk.setTile(xt, yt, new AirTile());
+                            chunk.setTile(xt, yt, new AirTile(x*xt, y*yt));
                         }else {
                             if ((xt * yt) %2 == 0) {
-                                chunk.setTile(xt, yt, new DirtTile());
+                                chunk.setTile(xt, yt, new DirtTile(x*xt,y*yt));
                             }else{
-                                chunk.setTile(xt, yt, new StoneTile());
+                                chunk.setTile(xt, yt, new StoneTile(x*xt, y*yt));
                             }
                             //System.out.println(String.format("%s, %s, %s, %s", x,y, xt, yt));
                         }

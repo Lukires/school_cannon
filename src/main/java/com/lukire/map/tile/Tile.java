@@ -9,9 +9,9 @@ public abstract class Tile {
 
     private TileType tile;
     private int x, y;
-    public Tile(TileType tile/*, int x, int y*/) {
-        /*this.x=x;
-        this.y=y;*/
+    public Tile(TileType tile, int x, int y) {
+        this.x=x;
+        this.y=y;
         this.tile=tile;
     }
 
@@ -27,6 +27,13 @@ public abstract class Tile {
         this.health-=i;
     }
 
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
 
     private static final int size = 8;
     public static int getSize() {

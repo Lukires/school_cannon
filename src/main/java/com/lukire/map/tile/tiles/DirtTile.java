@@ -5,8 +5,8 @@ import com.lukire.map.tile.TileType;
 
 public class DirtTile extends Tile {
 
-    public DirtTile() {
-        super(TileType.DIRT);
+    public DirtTile(int x, int y) {
+        super(TileType.DIRT, x, y);
     }
 }
 

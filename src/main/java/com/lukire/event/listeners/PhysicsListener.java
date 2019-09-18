@@ -88,7 +88,6 @@ public class PhysicsListener implements Listener {
                     EventHandler.trigger(new EntityBlockCollisionEvent(entity, collidedTiles));
                 }
 
-
             }
             placement.applyDirection();
             //Placement placement = entity.getPlacement();

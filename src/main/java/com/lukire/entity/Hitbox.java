@@ -13,7 +13,6 @@ public class Hitbox {
         this.b = b;
     }
 
-
     //offsetX is the x coordinate minus the entity's x coordinate
     //offsetY is the y coordinate minus the entity's y coordinate!
     public boolean isWithin(float offsetX, float offsetY) {
