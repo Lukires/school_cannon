@@ -14,17 +14,12 @@ public class MouseMoveListener implements Listener {
 
         PApplet screen = e.getScreen();
 
-        /*for (Entity entity : Entity.getEntities()) {
+        for (Entity entity : Entity.getEntities()) {
             if (!(entity instanceof Cannon)) {
                 return;
             }
-            screen.pushMatrix();
-            screen.translate(entity.getX()+entity.getSize()/2,entity.getY());
-            screen.rotate((float)Math.atan((entity.getY()-e.getY())/(entity.getX()-e.getX())));
-            screen.fill(0, 0, 255);
-            screen.rect(0, 0, entity.getSize(), entity.getSize()/2);
-            screen.popMatrix();
+            Cannon.setAngle((float)(Math.atan((entity.getY()-e.getY())/(entity.getX()-e.getX()))));
 
-        }*/
+        }
     }
 }

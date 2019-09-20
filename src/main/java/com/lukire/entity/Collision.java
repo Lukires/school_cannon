@@ -2,15 +2,15 @@ package com.lukire.entity;
 
 import com.lukire.map.tile.Tile;
 
-public class Collision {
+public class Collision<T> {
 
     float x, y;
-    Tile tile;
+    T object;
 
-    public Collision(Tile tile, float x, float y) {
+    public Collision(T object, float x, float y) {
         this.x=x;
         this.y=y;
-        this.tile=tile;
+        this.object=object;
     }
 
     public float getX() {
@@ -21,7 +21,7 @@ public class Collision {
         return this.y;
     }
 
-    public Tile getTile() {
-        return this.tile;
+    public T getObject() {
+        return this.object;
     }
 }

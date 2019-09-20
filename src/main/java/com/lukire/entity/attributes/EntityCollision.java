@@ -1,4 +1,6 @@
-package com.lukire.entity;
+package com.lukire.entity.attributes;
+
+import com.lukire.entity.Hitbox;
 
 public interface EntityCollision extends EntityPhysics {
 

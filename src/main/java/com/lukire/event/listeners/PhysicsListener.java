@@ -1,6 +1,8 @@
 package com.lukire.event.listeners;
 
 import com.lukire.entity.*;
+import com.lukire.entity.attributes.EntityCollision;
+import com.lukire.entity.attributes.EntityPhysics;
 import com.lukire.event.EventHandler;
 import com.lukire.event.EventListener;
 import com.lukire.event.Listener;

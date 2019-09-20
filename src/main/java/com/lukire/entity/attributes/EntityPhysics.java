@@ -1,4 +1,4 @@
-package com.lukire.entity;
+package com.lukire.entity.attributes;
 
 public interface EntityPhysics {
 
