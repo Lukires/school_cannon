@@ -1,0 +1,315 @@
+@startuml
+
+title __SCHOOLCANNON's Class Diagram__\n
+
+  namespace com.lukire.camera {
+    class com.lukire.camera.Camera {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    class com.lukire.entity.Collision {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    abstract class com.lukire.entity.Entity {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    enum EntityShape {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    class com.lukire.entity.Hitbox {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    class com.lukire.entity.Placement {
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace attributes {
+      interface com.lukire.entity.attributes.EntityCollision {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace attributes {
+      interface com.lukire.entity.attributes.EntityExplosive {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace attributes {
+      interface com.lukire.entity.attributes.EntityPhysics {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace entities {
+      class com.lukire.entity.entities.Cannon {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace entities {
+      class com.lukire.entity.entities.CannonBall {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.entity {
+    namespace types {
+      abstract class com.lukire.entity.types.Projectile {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    class com.lukire.event.Event {
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    class com.lukire.event.EventHandler {
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    interface com.lukire.event.EventListener {
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    interface com.lukire.event.Listener {
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.ClickEvent {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.EntityBlockCollisionEvent {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.EntityOnEntityCollision {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.KeyPressEvent {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.MouseMoveEvent {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace events {
+      class com.lukire.event.events.NewFrameEvent {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace listeners {
+      class com.lukire.event.listeners.ClickListener {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace listeners {
+      class com.lukire.event.listeners.EntityBlockCollisionListener {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace listeners {
+      class com.lukire.event.listeners.KeyListener {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace listeners {
+      class com.lukire.event.listeners.MouseMoveListener {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.event {
+    namespace listeners {
+      class com.lukire.event.listeners.PhysicsListener {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.main {
+    class com.lukire.main.Main {
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    class com.lukire.map.Map {
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    class com.lukire.map.MapGeneration {
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace chunk {
+      class com.lukire.map.chunk.Chunk {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      abstract class com.lukire.map.tile.Tile {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      enum TileType {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      namespace tiles {
+        class com.lukire.map.tile.tiles.AirTile {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      namespace tiles {
+        class com.lukire.map.tile.tiles.DirtTile {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      namespace tiles {
+        class com.lukire.map.tile.tiles.StoneTile {
+        }
+      }
+    }
+  }
+  
+
+  com.lukire.camera.Camera -up-|> processing.core.PMatrix2D
+  com.lukire.entity.Collision o-- T : object
+  com.lukire.entity.Entity o-- com.lukire.entity.Placement : placement
+  com.lukire.entity.Hitbox o-- com.lukire.entity.EntityShape : entityShape
+  com.lukire.entity.Placement -up-|> processing.core.PVector
+  com.lukire.entity.Placement o-- com.lukire.map.Map : map
+  com.lukire.entity.entities.Cannon .up.|> com.lukire.entity.attributes.EntityCollision
+  com.lukire.entity.entities.Cannon -up-|> com.lukire.entity.Entity
+  com.lukire.entity.entities.CannonBall .up.|> com.lukire.entity.attributes.EntityExplosive
+  com.lukire.entity.entities.CannonBall -up-|> com.lukire.entity.types.Projectile
+  com.lukire.entity.types.Projectile .up.|> com.lukire.entity.attributes.EntityCollision
+  com.lukire.entity.types.Projectile -up-|> com.lukire.entity.Entity
+  com.lukire.event.events.ClickEvent -up-|> com.lukire.event.Event
+  com.lukire.event.events.EntityBlockCollisionEvent -up-|> com.lukire.event.Event
+  com.lukire.event.events.EntityBlockCollisionEvent o-- com.lukire.entity.Entity : e
+  com.lukire.event.events.EntityOnEntityCollision -up-|> com.lukire.event.Event
+  com.lukire.event.events.KeyPressEvent -up-|> com.lukire.event.Event
+  com.lukire.event.events.MouseMoveEvent -up-|> com.lukire.event.Event
+  com.lukire.event.events.NewFrameEvent -up-|> com.lukire.event.Event
+  com.lukire.event.listeners.ClickListener .up.|> com.lukire.event.Listener
+  com.lukire.event.listeners.EntityBlockCollisionListener .up.|> com.lukire.event.Listener
+  com.lukire.event.listeners.KeyListener .up.|> com.lukire.event.Listener
+  com.lukire.event.listeners.KeyListener o-- com.lukire.camera.Camera : camera
+  com.lukire.event.listeners.MouseMoveListener .up.|> com.lukire.event.Listener
+  com.lukire.event.listeners.PhysicsListener .up.|> com.lukire.event.Listener
+  com.lukire.main.Main -up-|> processing.core.PApplet
+  com.lukire.main.Main o-- com.lukire.event.events.NewFrameEvent : newFrameEvent
+  com.lukire.main.Main o-- com.lukire.camera.Camera : camera
+  com.lukire.main.Main o-- com.lukire.map.Map : map
+  com.lukire.map.tile.Tile o-- com.lukire.map.tile.TileType : tile
+  com.lukire.map.tile.tiles.AirTile -up-|> com.lukire.map.tile.Tile
+  com.lukire.map.tile.tiles.DirtTile -up-|> com.lukire.map.tile.Tile
+  com.lukire.map.tile.tiles.StoneTile -up-|> com.lukire.map.tile.Tile
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
