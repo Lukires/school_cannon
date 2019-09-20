@@ -11,10 +11,15 @@ public class Cannon extends Entity implements EntityCollision {
     static final int size = 64;
 
     public void draw(PApplet screen) {
+        screen.stroke(255,0,0);
         screen.fill(255,0,0);
         screen.rect(getX(),getY(),size, size);
     }
 
+    @Override
+    public double getMass() {
+        return 1000.0;
+    }
 
     @Override
     public Hitbox getHitbox() {

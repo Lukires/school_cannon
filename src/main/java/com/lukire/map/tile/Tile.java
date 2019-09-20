@@ -8,10 +8,7 @@ public abstract class Tile {
     private float health = 100f;
 
     private TileType tile;
-    private int x, y;
-    public Tile(TileType tile, int x, int y) {
-        this.x=x;
-        this.y=y;
+    public Tile(TileType tile) {
         this.tile=tile;
     }
 
@@ -27,14 +24,6 @@ public abstract class Tile {
         this.health-=i;
     }
 
-    public int getX() {
-        return this.x;
-    }
-
-    public int getY() {
-        return this.y;
-    }
-
     private static final int size = 8;
     public static int getSize() {
         return size;
@@ -43,6 +32,7 @@ public abstract class Tile {
     public void draw(PApplet p, int x, int y) {
         short[] rgb = tile.getRGB();
         p.fill(rgb[0], rgb[1], rgb[2]);
+        p.stroke(rgb[0], rgb[1], rgb[2]);
         p.rect(x, y, Tile.getSize(), Tile.getSize());
 
         //System.out.println(String.format("[%s, %s, %s]",x,y,Tile.getSize()));

@@ -46,7 +46,7 @@ public class Main extends PApplet {
         EventHandler.register(new EntityBlockCollisionListener());
         EventHandler.register(new MouseMoveListener());
 
-        Entity.spawn(new Cannon(), new Placement(map, 96,100));
+        Entity.spawn(new Cannon(), new Placement(map, 96*4,96));
 
         newFrameEvent = new NewFrameEvent(this, frameCount, (int) frameRate);
     }
@@ -54,7 +54,7 @@ public class Main extends PApplet {
     @Override
     public void draw() {
 
-        //map.draw(this);
+        map.draw(this);
         EventHandler.trigger(newFrameEvent);
         if (camera.getxOffset() != cameraX || camera.getyOffset() != cameraY) {
             update=true;

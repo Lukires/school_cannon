@@ -10,6 +10,8 @@ public interface EntityCollision extends EntityPhysics {
 
     public Hitbox getHitbox();
 
+    public double getMass();
+
     default boolean collides(float xOffset, float yOffset) {
         return getHitbox().isWithin(xOffset, yOffset);
     }

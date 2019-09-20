@@ -87,7 +87,6 @@ public class Map {
                 }
                 Chunk chunk = yChunks.get(y);
                 chunk.draw(screen, x, y);
-
                 //System.out.println(String.format("{{%s, %s}}", x, y));
             }
         }

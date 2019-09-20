@@ -9,7 +9,7 @@ public enum TileType {
 
      */
 
-    DIRT(100, new short[]{133,94,64}, true), STONE(1000, new short[]{139,139,139}, true), AIR(0,new short[]{0,0,0}, false);
+    DIRT(100, new short[]{133,94,64}, true), STONE(1000, new short[]{139,139,139}, true), AIR(0,new short[]{255,255,255}, false);
 
     int strength;
     short[] rgb;
