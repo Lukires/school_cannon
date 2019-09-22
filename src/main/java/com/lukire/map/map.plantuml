@@ -13,7 +13,9 @@ title __MAP's Class Diagram__\n
         + getTile()
         + setChunk()
         + setChunkFromGameLocation()
+        + setTile()
         + updateChunk()
+        + updateNearbyChunks()
     }
   }
   

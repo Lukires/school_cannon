@@ -19,6 +19,7 @@ title __ATTRIBUTES's Class Diagram__\n
     namespace attributes {
       interface com.lukire.entity.attributes.EntityExplosive {
           + blowOnImpact()
+          + explode()
           {abstract} + getBlastStrength()
       }
     }

@@ -21,6 +21,18 @@ title __CHUNK's Class Diagram__\n
   }
   
 
+  namespace com.lukire.map {
+    namespace chunk {
+      class com.lukire.map.chunk.NoChunkException {
+          - x : int
+          - y : int
+          + NoChunkException()
+          + toString()
+      }
+    }
+  }
+  
+
 
 
 right footer

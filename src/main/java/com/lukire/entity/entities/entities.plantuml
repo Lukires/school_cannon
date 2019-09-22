@@ -5,13 +5,13 @@ title __ENTITIES's Class Diagram__\n
   namespace com.lukire.entity {
     namespace entities {
       class com.lukire.entity.entities.Cannon {
-          {static} ~ angle : float
+          ~ angle : float
           {static} ~ size : int
           + draw()
           + getElasticity()
           + getHitbox()
           + getMass()
-          {static} + setAngle()
+          + setAngle()
           + shootCannonBall()
       }
     }

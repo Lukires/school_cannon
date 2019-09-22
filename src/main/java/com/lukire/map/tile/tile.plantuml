@@ -4,6 +4,18 @@ title __TILE's Class Diagram__\n
 
   namespace com.lukire.map {
     namespace tile {
+      class com.lukire.map.tile.NoTileException {
+          - x : int
+          - y : int
+          + NoTileException()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
       abstract class com.lukire.map.tile.Tile {
           - health : float
           {static} - size : int

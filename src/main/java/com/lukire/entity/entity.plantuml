@@ -23,6 +23,7 @@ title __ENTITY's Class Diagram__\n
         + getPlacement()
         + getX()
         + getY()
+        {static} + remove()
         + setPlacement()
         + setX()
         + setY()

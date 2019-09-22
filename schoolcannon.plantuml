@@ -8,6 +8,20 @@ title __SCHOOLCANNON's Class Diagram__\n
   }
   
 
+  namespace com.lukire.effect {
+    abstract class com.lukire.effect.Effect {
+    }
+  }
+  
+
+  namespace com.lukire.effect {
+    namespace effects {
+      class com.lukire.effect.effects.Explosion {
+      }
+    }
+  }
+  
+
   namespace com.lukire.entity {
     class com.lukire.entity.Collision {
     }
@@ -60,7 +74,7 @@ title __SCHOOLCANNON's Class Diagram__\n
       }
     }
   }
-
+  
 
   namespace com.lukire.entity {
     namespace entities {
@@ -219,6 +233,22 @@ title __SCHOOLCANNON's Class Diagram__\n
   namespace com.lukire.map {
     namespace chunk {
       class com.lukire.map.chunk.Chunk {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace chunk {
+      class com.lukire.map.chunk.NoChunkException {
+      }
+    }
+  }
+  
+
+  namespace com.lukire.map {
+    namespace tile {
+      class com.lukire.map.tile.NoTileException {
       }
     }
   }
