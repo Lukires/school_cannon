@@ -10,3 +10,7 @@ src/main/java/com/lukire/map/Map.java
 
 Project is far from finished.
 Still playing around with a bunch of things.
+
+
+Auto-generated Javadocs can be found here:
+https://lukires.github.io/school_cannon/docs/
