@@ -24,6 +24,7 @@ title __ENTITY's Class Diagram__\n
         + getX()
         + getY()
         {static} + remove()
+        + setMap()
         + setPlacement()
         + setX()
         + setY()
@@ -64,6 +65,7 @@ title __ENTITY's Class Diagram__\n
         + getX()
         + getY()
         + setDirection()
+        + setMap()
     }
   }
   

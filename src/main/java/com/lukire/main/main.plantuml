@@ -4,6 +4,7 @@ title __MAIN's Class Diagram__\n
 
   namespace com.lukire.main {
     class com.lukire.main.Main {
+        {static} + points : int
         {static} + update : boolean
         ~ cameraX : int
         ~ cameraY : int
