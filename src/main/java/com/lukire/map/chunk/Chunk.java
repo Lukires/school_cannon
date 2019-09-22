@@ -1,6 +1,8 @@
 package com.lukire.map.chunk;
 
+import com.lukire.map.tile.NoTileException;
 import com.lukire.map.tile.Tile;
+import com.lukire.map.tile.tiles.AirTile;
 import processing.core.PApplet;
 
 public class Chunk {
@@ -16,8 +18,17 @@ public class Chunk {
 
 
     //Gets the tile based on CHUNK TILE COORDINATES
-    public Tile getTile(int x, int y) {
-        return tiles[x][y];
+    public Tile getTile(int x, int y) throws NoTileException {
+        if (x >= 16 || y >= 16) {
+            throw new NoTileException(x, y);
+        }
+
+        Tile tile = tiles[x][y];
+        if (tile == null) {
+            throw new NoTileException(x, y);
+        }
+
+        return tile;
     }
 
     public void setTile(int x, int y, Tile tile) {
@@ -25,7 +36,7 @@ public class Chunk {
     }
 
     //Gets the tile based on GAME COORDINATES
-    public Tile getTileFromGameCoordinate(int x, int y) {
+    public Tile getTileFromGameCoordinate(int x, int y) throws NoTileException {
         return getTile(getTileX(x), getTileY(y));
     }
 

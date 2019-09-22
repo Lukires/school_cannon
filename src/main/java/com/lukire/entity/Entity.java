@@ -42,6 +42,10 @@ public abstract class Entity {
         entities.add(e);
     }
 
+    public static void remove(Entity e) {
+        entities.remove(e);
+    }
+
     public boolean collidesBlock() {
        /* Map map = placement.getMap();
         int x = (int)placement.getX();

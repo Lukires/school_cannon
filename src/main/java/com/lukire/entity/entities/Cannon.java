@@ -1,15 +1,17 @@
 package com.lukire.entity.entities;
 
 import com.lukire.entity.Entity;
+import com.lukire.entity.Placement;
 import com.lukire.entity.attributes.EntityCollision;
 import com.lukire.entity.EntityShape;
 import com.lukire.entity.Hitbox;
 import processing.core.PApplet;
+import processing.core.PVector;
 
 public class Cannon extends Entity implements EntityCollision {
 
     static final int size = 64;
-    static float angle = 45f;
+    float angle = 45f;
 
     public void draw(PApplet screen) {
         screen.stroke(255,0,0);
@@ -45,11 +47,14 @@ public class Cannon extends Entity implements EntityCollision {
     }
 
     public void shootCannonBall() {
+        CannonBall cb = new CannonBall();
+        Entity.spawn(cb, new Placement(this.getPlacement().getMap(), this.getPlacement().getX(), this.getPlacement().getY()));
+        cb.getPlacement().setDirection(new PVector((float)(20*Math.cos((angle))), (float)(20*Math.sin(angle))));
         
     }
 
-    public static void setAngle(float x) {
-        angle=x;
+    public void setAngle(float angle) {
+        this.angle=angle;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.lukire.entity.entities;
 
+import com.lukire.entity.EntityShape;
 import com.lukire.entity.Hitbox;
 import com.lukire.entity.attributes.EntityExplosive;
 import com.lukire.entity.types.Projectile;
@@ -8,7 +9,8 @@ import processing.core.PApplet;
 public class CannonBall extends Projectile implements EntityExplosive {
     @Override
     public void draw(PApplet screen) {
-
+        screen.fill(0,0,0);
+        screen.ellipse(getX(),getY(),10,10);
     }
 
     @Override
@@ -18,7 +20,7 @@ public class CannonBall extends Projectile implements EntityExplosive {
 
     @Override
     public Hitbox getHitbox() {
-        return null;
+        return new Hitbox(EntityShape.SQUARE, 10, 10);
     }
 
     @Override

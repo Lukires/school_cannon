@@ -9,6 +9,8 @@ import com.lukire.event.Listener;
 import com.lukire.event.events.EntityBlockCollisionEvent;
 import com.lukire.event.events.NewFrameEvent;
 import com.lukire.map.Map;
+import com.lukire.map.chunk.NoChunkException;
+import com.lukire.map.tile.NoTileException;
 import com.lukire.map.tile.Tile;
 import processing.core.PVector;
 
@@ -41,56 +43,58 @@ public class PhysicsListener implements Listener {
 
         for (Entity entity : Entity.getEntities()) {
 
-            if (!(entity instanceof EntityPhysics)) {
-                return;
-            }
 
-
-            Placement placement = entity.getPlacement();
-
-            if (((EntityPhysics) entity).affectedByGravity()) {
-                placement.addDirection(new PVector((float) 0, (float) (EntityPhysics.GRAVITATIONAL_CONSTANT * e.getSecondPerFrame())));
-            }
-
-
-            Map map = placement.getMap();
-            if (entity instanceof EntityCollision) {
-                Hitbox hitbox = ((EntityCollision) entity).getHitbox();
-                int width = hitbox.getWidth();
-                int height = hitbox.getHeight();
-
-                float px = placement.getX()+placement.getDirection().x;
-                float py = placement.getY()+placement.getDirection().y;
-
-                if (hitbox.getEntityShape().equals(EntityShape.SQUARE)) {
-                    for (int x = 0; x < width; x++) {
-                        //System.out.println("X: "+(x+px));
-                        //TOP OF THE SQUARE
-                        addCollidedTile(map.getTile((int)px+x, (int)py), px+x, py);
-
-                        //BOTTOM OF THE SQUARE
-                        addCollidedTile(map.getTile((int)px+x, (int)py+height), px+x, py+height);
-                    }
-
-                    for (int y = 0; y < height; y++) {
-                        //LEFT SIDE OF SQUARE
-                        addCollidedTile(map.getTile((int)px, (int)py+y), px, py+y);
-
-                        //RIGHT SIDE OF SQUARE
-                        addCollidedTile(map.getTile((int)px+width, (int)py+y), px+width, py+y);
-
-                    }
+            try{
+                if (!(entity instanceof EntityPhysics)) {
+                    return;
                 }
 
-                if (!collidedTiles.isEmpty()) {
-                    //System.out.println("Size: "+collidedTiles.size());
-                    EventHandler.trigger(new EntityBlockCollisionEvent(entity, collidedTiles));
-                    collidedTiles.clear();
+
+                Placement placement = entity.getPlacement();
+
+                if (((EntityPhysics) entity).affectedByGravity()) {
+                    placement.addDirection(new PVector((float) 0, (float) (EntityPhysics.GRAVITATIONAL_CONSTANT * e.getSecondPerFrame())));
                 }
 
-            }
-            placement.applyDirection();
-            //Placement placement = entity.getPlacement();
+
+                Map map = placement.getMap();
+                if (entity instanceof EntityCollision) {
+                    Hitbox hitbox = ((EntityCollision) entity).getHitbox();
+                    int width = hitbox.getWidth();
+                    int height = hitbox.getHeight();
+
+                    float px = placement.getX()+placement.getDirection().x;
+                    float py = placement.getY()+placement.getDirection().y;
+
+                    if (hitbox.getEntityShape().equals(EntityShape.SQUARE)) {
+                        for (int x = 0; x < width; x++) {
+                            //System.out.println("X: "+(x+px));
+                            //TOP OF THE SQUARE
+                            addCollidedTile(map.getTile((int)px+x, (int)py), px+x, py);
+
+                            //BOTTOM OF THE SQUARE
+                            addCollidedTile(map.getTile((int)px+x, (int)py+height), px+x, py+height);
+                        }
+
+                        for (int y = 0; y < height; y++) {
+                            //LEFT SIDE OF SQUARE
+                            addCollidedTile(map.getTile((int)px, (int)py+y), px, py+y);
+
+                            //RIGHT SIDE OF SQUARE
+                            addCollidedTile(map.getTile((int)px+width, (int)py+y), px+width, py+y);
+
+                        }
+                    }
+
+                    if (!collidedTiles.isEmpty()) {
+                        //System.out.println("Size: "+collidedTiles.size());
+                        EventHandler.trigger(new EntityBlockCollisionEvent(entity, collidedTiles));
+                        collidedTiles.clear();
+                    }
+
+                }
+                placement.applyDirection();
+                //Placement placement = entity.getPlacement();
 
             /*if (entity instanceof Collidable) {
                 if (((Collidable) entity).isCollidable()) {
@@ -110,12 +114,18 @@ public class PhysicsListener implements Listener {
 
 
 
-            //placement.applyDirection();
-            //Temporary draw update
-            //Should update individual chunks instead of whole map!
-            //SLOWS DOWN PROGRAM DRASTICALLY
+                //placement.applyDirection();
+                //Temporary draw update
+                //Should update individual chunks instead of whole map!
+                //SLOWS DOWN PROGRAM DRASTICALLY
 
-            //if (placement.getDirection().y!=0) map.draw(e.getScreen());
+                //if (placement.getDirection().y!=0) map.draw(e.getScreen());
+
+            }catch (Exception ex) {
+                //ex.printStackTrace();
+                Entity.remove(entity);
+            }
+
 
         }
 

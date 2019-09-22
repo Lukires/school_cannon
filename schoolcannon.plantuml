@@ -60,7 +60,7 @@ title __SCHOOLCANNON's Class Diagram__\n
       }
     }
   }
-  
+
 
   namespace com.lukire.entity {
     namespace entities {

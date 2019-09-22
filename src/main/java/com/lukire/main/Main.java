@@ -33,7 +33,7 @@ public class Main extends PApplet {
     @Override
     public void settings() {
 
-        size(1000,1000);
+        size(1500,1000);
     }
 
     @Override
@@ -69,6 +69,7 @@ public class Main extends PApplet {
         }
 
         for (Entity entity : Entity.getEntities()) {
+            //map.updateNearbyChunks(this, (int)entity.getX(), (int)entity.getY(), 8);
             entity.draw(this);
         }
 

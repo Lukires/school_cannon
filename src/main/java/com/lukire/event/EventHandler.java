@@ -72,7 +72,7 @@ public class EventHandler {
                 method.invoke(listeners.get(method), e);
             }
         }catch(Exception ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 }

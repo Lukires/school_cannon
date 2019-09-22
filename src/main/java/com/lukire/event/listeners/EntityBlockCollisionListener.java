@@ -2,6 +2,7 @@ package com.lukire.event.listeners;
 
 import com.lukire.entity.*;
 import com.lukire.entity.attributes.EntityCollision;
+import com.lukire.entity.attributes.EntityExplosive;
 import com.lukire.event.EventListener;
 import com.lukire.event.Listener;
 import com.lukire.event.events.EntityBlockCollisionEvent;
@@ -32,6 +33,13 @@ public class EntityBlockCollisionListener implements Listener {
         float entityCenterX = placement.getX()+(hitbox.getWidth()/2);
         float entityCenterY = placement.getY()+(hitbox.getHeight()/2);
         float elasticity = ((EntityCollision) entity).getElasticity();
+
+
+        if (entity instanceof EntityExplosive) {
+            if (((EntityExplosive) entity).blowOnImpact()) {
+
+            }
+        }
 
 
         double xMean = 0;

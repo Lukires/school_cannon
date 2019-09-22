@@ -17,7 +17,7 @@ public class MapGeneration {
         int ts = Tile.getSize();
 
 
-        for(int x = 0; x < 8; x++) {
+        for(int x = 0; x < 16; x++) {
             for (int y = 0; y < 8; y++) {
                 Chunk chunk = new Chunk();
                 for (int xt = 0; xt < 16; xt++) {

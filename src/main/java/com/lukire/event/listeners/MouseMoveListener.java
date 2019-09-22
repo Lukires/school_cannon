@@ -18,7 +18,8 @@ public class MouseMoveListener implements Listener {
             if (!(entity instanceof Cannon)) {
                 return;
             }
-            Cannon.setAngle((float)(Math.atan((entity.getY()-e.getY())/(entity.getX()-e.getX()))));
+
+            ((Cannon) entity).setAngle((float)(Math.atan((entity.getY()-e.getY())/(entity.getX()-e.getX()))));
 
         }
     }

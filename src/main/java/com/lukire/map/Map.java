@@ -1,6 +1,8 @@
 package com.lukire.map;
 
 import com.lukire.map.chunk.Chunk;
+import com.lukire.map.chunk.NoChunkException;
+import com.lukire.map.tile.NoTileException;
 import com.lukire.map.tile.Tile;
 import processing.core.PApplet;
 
@@ -26,16 +28,21 @@ public class Map {
     }
 
     //Gets the chunk based on CHUNK COORDINATES
-    public Chunk getChunk(int x, int y) {
+    public Chunk getChunk(int x, int y) throws NoChunkException {
         if (chunks.get(x) == null) {
-            return null;
+            return new Chunk();
         }
+
+        if (chunks.get(y) == null) {
+            throw new NoChunkException(x, y);
+        }
+
         return chunks.get(x).get(y);
     }
 
 
     //Gets the chunk based on GAME COORDINATES
-    public Chunk getChunkFromGameLocation(int x, int y) {
+    public Chunk getChunkFromGameLocation(int x, int y) throws NoChunkException {
         return getChunk(getChunkX(x), getChunkY(y));
     }
 
@@ -52,7 +59,7 @@ public class Map {
         return (int)(y/(16*Tile.getSize()));
     }
 
-    public Tile getTile(int x, int y) {
+    public Tile getTile(int x, int y) throws NoChunkException, NoTileException {
         return getChunkFromGameLocation(x,y).getTileFromGameCoordinate(x,y);
     }
 
@@ -67,13 +74,26 @@ public class Map {
 
      */
 
-    public void updateChunk(PApplet screen, int x, int y) {
+    public void updateChunk(PApplet screen, int x, int y) throws NoChunkException{
         Chunk chunk = getChunkFromGameLocation(x, y);
 
         if (chunk != null) {
             chunk.draw(screen, getChunkX(x), getChunkY(y));
         }
     }
+
+    public void updateNearbyChunks(PApplet screen, int x, int y, int chunkDistance) {
+        for (int i = 0; i < chunkDistance; i++) {
+            try{
+                //We update the same chunk twice at i=0, but who really cares about that
+                updateChunk(screen, x+16*chunkDistance, y+16*chunkDistance);
+                updateChunk(screen, x-16*chunkDistance, y-16*chunkDistance);
+            }catch(NoChunkException e) {
+                continue;
+            }
+        }
+    }
+
 
     public void draw(PApplet screen) {
 
