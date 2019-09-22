@@ -13,4 +13,4 @@ Still playing around with a bunch of things.
 
 
 Auto-generated Javadocs can be found here:
-https://lukires.github.io/school_cannon/docs/
+https://lukires.github.io/school_cannon
