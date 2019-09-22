@@ -16,6 +16,8 @@ import processing.core.PApplet;
 import processing.event.KeyEvent;
 import processing.event.MouseEvent;
 
+import java.util.ArrayList;
+
 public class Main extends PApplet {
 
 
@@ -28,6 +30,7 @@ public class Main extends PApplet {
     public static void main(String[] args) {
         Main.main("com.lukire.main.Main");
     }
+    public static int points = 0;
 
 
     @Override
@@ -54,6 +57,30 @@ public class Main extends PApplet {
     @Override
     public void draw() {
 
+        if (points >= 600) {
+
+            color(0,0,0);
+            textSize(40);
+            println("Victory!");
+            points = 0;
+            map = MapGeneration.generateMap();
+
+            ArrayList<Entity> removing = new ArrayList<Entity>();
+
+            for (Entity entity : Entity.getEntities()) {
+                if (entity instanceof Cannon) {
+                    entity.setMap(map);
+                }else{
+                    removing.add(entity);
+                }
+            }
+
+            for (Entity entity : removing) {
+                Entity.remove(entity);
+            }
+
+        }
+
         map.draw(this);
         EventHandler.trigger(newFrameEvent);
         if (camera.getxOffset() != cameraX || camera.getyOffset() != cameraY) {
@@ -72,6 +99,10 @@ public class Main extends PApplet {
             //map.updateNearbyChunks(this, (int)entity.getX(), (int)entity.getY(), 8);
             entity.draw(this);
         }
+
+        color(0,0,0);
+        textSize(30);
+        text("Points earned: "+points, 60,60);
 
     }
 

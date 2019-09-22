@@ -19,7 +19,7 @@ public class Cannon extends Entity implements EntityCollision {
         screen.rect(getX(),getY(),size, size);
 
         screen.stroke(0,255,0);
-        screen.fill(0,255,255);
+        screen.fill(0,0,0);
         screen.pushMatrix();
 
 

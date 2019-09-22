@@ -6,6 +6,7 @@ import com.lukire.entity.attributes.EntityExplosive;
 import com.lukire.event.EventListener;
 import com.lukire.event.Listener;
 import com.lukire.event.events.EntityBlockCollisionEvent;
+import com.lukire.main.Main;
 import com.lukire.map.Map;
 import com.lukire.map.tile.Tile;
 import com.lukire.map.tile.TileType;
@@ -46,9 +47,13 @@ public class EntityBlockCollisionListener implements Listener {
                     for (int y = -6; y < 6; y++) {
                         try{
                             Tile tile = map.getTile((int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
+                            if (tile.getTileType() == TileType.AIR) {
+                                continue;
+                            }
                             tile.subtractHealth(600f);
                             if (tile.getHealth() <= 0f) {
                                 map.setTile(new AirTile(), (int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
+                                Main.points++;
 
                             }
                         }catch(Exception ex) {

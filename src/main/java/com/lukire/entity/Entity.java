@@ -35,6 +35,8 @@ public abstract class Entity {
 
     public void setY(float y) { placement.y=y; }
 
+    public void setMap(Map map) { placement.setMap(map);}
+
     public abstract void draw(PApplet screen);
 
     public static void spawn(Entity e, Placement placement) {

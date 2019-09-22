@@ -38,4 +38,8 @@ public class Placement extends PVector {
     public float getY() {
         return y;
     }
+
+    public void setMap(Map map) {
+        this.map=map;
+    }
 }
