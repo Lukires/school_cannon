@@ -6,7 +6,10 @@ import com.lukire.entity.attributes.EntityExplosive;
 import com.lukire.event.EventListener;
 import com.lukire.event.Listener;
 import com.lukire.event.events.EntityBlockCollisionEvent;
+import com.lukire.map.Map;
 import com.lukire.map.tile.Tile;
+import com.lukire.map.tile.TileType;
+import com.lukire.map.tile.tiles.AirTile;
 import processing.core.PVector;
 
 import java.util.ArrayList;
@@ -23,6 +26,7 @@ public class EntityBlockCollisionListener implements Listener {
 
         ArrayList<Collision> collisions = e.getCollisions();
         Placement placement = e.getEntity().getPlacement();
+        Map map = placement.getMap();
         PVector direction = placement.getDirection();
         float xDirection = direction.x;
         float yDirection = direction.y;
@@ -37,7 +41,23 @@ public class EntityBlockCollisionListener implements Listener {
 
         if (entity instanceof EntityExplosive) {
             if (((EntityExplosive) entity).blowOnImpact()) {
+                float strength = ((EntityExplosive) entity).getBlastStrength();
+                for (int x = -6; x < 6; x++) {
+                    for (int y = -6; y < 6; y++) {
+                        try{
+                            Tile tile = map.getTile((int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
+                            tile.subtractHealth(2000f);
+                            if (tile.getHealth() <= 0f) {
+                                map.setTile(new AirTile(), (int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
 
+                            }
+                        }catch(Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }
+                Entity.remove(entity);
+                return;
             }
         }
 

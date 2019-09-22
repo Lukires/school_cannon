@@ -1,5 +1,7 @@
 package com.lukire.entity.attributes;
 
+import com.lukire.entity.Entity;
+
 public interface EntityExplosive {
 
     default boolean blowOnImpact() {
@@ -7,4 +9,8 @@ public interface EntityExplosive {
     }
 
     float getBlastStrength();
+
+    default void explode() {
+
+    }
 }

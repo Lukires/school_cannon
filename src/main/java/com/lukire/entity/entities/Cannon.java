@@ -48,7 +48,7 @@ public class Cannon extends Entity implements EntityCollision {
 
     public void shootCannonBall() {
         CannonBall cb = new CannonBall();
-        Entity.spawn(cb, new Placement(this.getPlacement().getMap(), this.getPlacement().getX(), this.getPlacement().getY()));
+        Entity.spawn(cb, new Placement(this.getPlacement().getMap(), this.getPlacement().getX()+size, this.getPlacement().getY()+size/4));
         cb.getPlacement().setDirection(new PVector((float)(20*Math.cos((angle))), (float)(20*Math.sin(angle))));
         
     }

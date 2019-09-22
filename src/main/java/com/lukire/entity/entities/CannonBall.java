@@ -10,7 +10,7 @@ public class CannonBall extends Projectile implements EntityExplosive {
     @Override
     public void draw(PApplet screen) {
         screen.fill(0,0,0);
-        screen.ellipse(getX(),getY(),10,10);
+        screen.rect(getX(),getY(),10,10);
     }
 
     @Override

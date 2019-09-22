@@ -45,11 +45,11 @@ public class Chunk {
     }
 
     public int getTileX(int x) {
-        return (x/(int)Tile.getSize())/(int)Chunk.getSize();
+        return ((int)x/Tile.getSize())%Chunk.getSize();
     }
 
     public int getTileY(int y) {
-        return (y/(int)Tile.getSize())/(int)Chunk.getSize();
+        return ((int)y/Tile.getSize())%Chunk.getSize();
     }
 
     //xc and xy are CHUNK COORDINATES

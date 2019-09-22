@@ -38,7 +38,7 @@ public class Main extends PApplet {
 
     @Override
     public void setup() {
-        frameRate(30);
+        frameRate(120);
 
         EventHandler.register(new ClickListener());
         EventHandler.register(new KeyListener());

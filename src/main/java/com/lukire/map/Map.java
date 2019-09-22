@@ -63,6 +63,10 @@ public class Map {
         return getChunkFromGameLocation(x,y).getTileFromGameCoordinate(x,y);
     }
 
+    public void setTile(Tile tile, int x, int y) throws NoChunkException, NoTileException {
+        getChunkFromGameLocation(x,y).setTileFromGameCoordinate(x, y, tile);
+    }
+
 
     /*
 
