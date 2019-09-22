@@ -9,6 +9,8 @@ import com.lukire.map.tile.tiles.AirTile;
 import com.lukire.map.tile.tiles.DirtTile;
 import com.lukire.map.tile.tiles.StoneTile;
 
+import java.util.Random;
+
 public class MapGeneration {
 
     public static Map generateMap() {
@@ -25,7 +27,7 @@ public class MapGeneration {
                         if (y < 4) {
                             chunk.setTile(xt, yt, new AirTile());
                         }else {
-                            if ((xt * yt) %2 == 0) {
+                            if ((xt * yt) * (new Random().nextInt(50)) %2 == 0) {
                                 chunk.setTile(xt, yt, new DirtTile());
                             }else{
                                 chunk.setTile(xt, yt, new StoneTile());

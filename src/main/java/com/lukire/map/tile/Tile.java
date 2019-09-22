@@ -5,11 +5,12 @@ import processing.core.PApplet;
 public abstract class Tile {
 
 
-    private float health = 100f;
+    private float health;
 
     private TileType tile;
     public Tile(TileType tile) {
         this.tile=tile;
+        this.health=tile.getStrength();
     }
 
     public TileType getTileType() {

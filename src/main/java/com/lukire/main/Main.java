@@ -46,7 +46,7 @@ public class Main extends PApplet {
         EventHandler.register(new EntityBlockCollisionListener());
         EventHandler.register(new MouseMoveListener());
 
-        Entity.spawn(new Cannon(), new Placement(map, 96*4,96));
+        Entity.spawn(new Cannon(), new Placement(map, 16,96));
 
         newFrameEvent = new NewFrameEvent(this, frameCount, (int) frameRate);
     }

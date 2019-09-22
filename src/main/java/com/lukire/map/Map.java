@@ -60,7 +60,17 @@ public class Map {
     }
 
     public Tile getTile(int x, int y) throws NoChunkException, NoTileException {
-        return getChunkFromGameLocation(x,y).getTileFromGameCoordinate(x,y);
+        if (getChunkFromGameLocation(x,y)==null) {
+            throw new NoChunkException(x,y);
+        }
+
+        Tile tile = getChunkFromGameLocation(x,y).getTileFromGameCoordinate(x,y);
+
+        if (tile==null){
+            throw new NoTileException(x,y);
+        }
+
+        return tile;
     }
 
     public void setTile(Tile tile, int x, int y) throws NoChunkException, NoTileException {

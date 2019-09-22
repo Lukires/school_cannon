@@ -46,7 +46,7 @@ public class EntityBlockCollisionListener implements Listener {
                     for (int y = -6; y < 6; y++) {
                         try{
                             Tile tile = map.getTile((int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
-                            tile.subtractHealth(2000f);
+                            tile.subtractHealth(600f);
                             if (tile.getHealth() <= 0f) {
                                 map.setTile(new AirTile(), (int)entityCenterX+x*Tile.getSize(), (int)entityCenterY+y*Tile.getSize());
 
